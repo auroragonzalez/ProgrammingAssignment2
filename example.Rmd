@@ -1,0 +1,40 @@
+---
+title: "Example inverse matrix"
+author: "Aurora"
+date: "21/03/2015"
+output: pdf_document
+---
+We test the function `cachematrix`. First of all:
+```{r}
+source("cachematrix.R")
+```
+
+Then, we define a matrix
+
+```{r}
+mat <- matrix(data = c(1,0,1,1), nrow = 2, ncol = 2)
+```
+
+We save it in cache
+
+```{r}
+mat2 <- makeCacheMatrix(mat)
+```
+
+And we compute its inverse
+```{r}
+cacheSolve(mat2)
+```
+
+If we do this again, we obtain the cached inverse matrix
+
+```{r}
+cacheSolve(mat2)
+```
+
+```{r}
+sessionInfo()
+```
+
+
+
